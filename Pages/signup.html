@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Stackly</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2c1810 0%, #1a0f07 50%, #8b4513 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .auth-container {
+            background: rgba(24, 15, 5, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(139, 69, 19, 0.3);
+            border-radius: 20px;
+            padding: 3rem;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.8s ease-out;
+            position: relative;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(139, 69, 19, 0.2);
+            color: #ccc4c4;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            background: rgba(201, 100, 29, 0.3);
+            color: #c0c0c0;
+            transform: scale(1.1);
+        }
+
+        .logo {
+            width: 120px;
+            height: 50px;
+            margin: 0 auto 1rem;
+            display: block;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        h2 {
+            color: #ccc4c4;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            color: #a8a8a8;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px 12px 46px;
+            background: rgba(139, 69, 19, 0.1);
+            border: 2px solid rgba(192, 192, 192, 0.2);
+            border-radius: 12px;
+            color: #ccc4c4;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder {
+            color: #8a8a8a;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #c0c0c0;
+            background: rgba(192, 192, 192, 0.15);
+            box-shadow: 0 0 20px rgba(192, 192, 192, 0.2);
+        }
+
+        .form-group i {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgb(252, 195, 138);
+        }
+
+        .password-match {
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            padding: 8px 12px;
+            border-radius: 6px;
+            display: none;
+        }
+
+        .match { background: rgba(76, 175, 80, 0.2); color: #4caf50; }
+        .mismatch { background: rgba(244, 67, 54, 0.2); color: #f44336; }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(45deg, #c0c0c0, #8b4513);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            box-shadow: 0 8px 25px rgba(192, 192, 192, 0.3);
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(139, 69, 19, 0.5);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .toggle-link {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: rgb(240, 231, 214)
+        }
+
+        .toggle-link a {
+            color: #c9641d;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .toggle-link a:hover {
+            color: #c0c0c0;
+        }
+
+        .error-msg {
+            background: rgba(139, 0, 0, 0.2);
+            color: #ff6b6b;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #ff4444;
+            display: none;
+        }
+
+        @media (max-width: 480px) {
+            .auth-container { 
+                padding: 2.5rem 1.5rem 3rem;
+                margin: 1rem; 
+            }
+            h2{
+                font-size: 20px;
+            }
+            .logo{
+                margin-bottom: 0px;
+            }
+            .form-group{
+                margin-bottom: 15px;
+            }
+            .subtitle{
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+            .form-group input{
+                padding: 10px 12px 10px 42px;
+            }
+            .close-btn {
+                top: 15px;
+                right: 15px;
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <button class="close-btn" onclick="closeAuth()" title="Close">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <a href="../index.html" class="logo">
+            <img src="../Images/logo.webp" alt="Stackly">
+        </a>
+        
+        <h2>Create Account</h2>
+        <p class="subtitle">Join Stackly today</p>
+        
+        <div id="errorMsg" class="error-msg"></div>
+
+        <form id="signupForm" onsubmit="handleSignUp(event)">
+            <div class="form-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="name" placeholder="Full Name" required>
+            </div>
+            
+            <div class="form-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" placeholder="Email Address" required>
+            </div>
+            
+            <div class="form-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="Password (min 6 chars)" required minlength="6">
+                <div id="passwordMatch" class="password-match"></div>
+            </div>
+            
+            <div class="form-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+            </div>
+            
+            <button type="submit" class="submit-btn" id="submitBtn">
+                <i class="fas fa-user-plus"></i> Create Account
+            </button>
+        </form>
+        
+        <div class="toggle-link">
+            Already have an account? <a href="./signin.html">Sign In</a>
+        </div>
+    </div>
+
+    <script>
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirmPassword');
+        const passwordMatch = document.getElementById('passwordMatch');
+        const submitBtn = document.getElementById('submitBtn');
+
+        confirmPassword.addEventListener('input', checkPasswordMatch);
+        password.addEventListener('input', checkPasswordMatch);
+
+        function checkPasswordMatch() {
+            if (confirmPassword.value === password.value && password.value.length >= 6) {
+                passwordMatch.textContent = 'Passwords match!';
+                passwordMatch.className = 'password-match match';
+                passwordMatch.style.display = 'block';
+                submitBtn.disabled = false;
+            } else if (confirmPassword.value && password.value) {
+                passwordMatch.textContent = 'Passwords do not match!';
+                passwordMatch.className = 'password-match mismatch';
+                passwordMatch.style.display = 'block';
+                submitBtn.disabled = true;
+            } else {
+                passwordMatch.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        }
+
+        function handleSignUp(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const passwordVal = document.getElementById('password').value;
+            const confirmPasswordVal = document.getElementById('confirmPassword').value;
+            const errorMsg = document.getElementById('errorMsg');
+            
+            errorMsg.style.display = 'none';
+            
+            if (!name || !email || !passwordVal || !confirmPasswordVal) {
+                showError('Please fill all fields');
+                return;
+            }
+            
+            if (passwordVal.length < 6) {
+                showError('Password must be more than 6 characters');
+                return;
+            }
+            
+            if (passwordVal !== confirmPasswordVal) {
+                showError('Passwords do not match');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                showError('Please enter a valid email address');
+                return;
+            }
+            
+            window.location.href = 'error.html';
+        }
+        
+        function showError(message) {
+            const errorMsg = document.getElementById('errorMsg');
+            errorMsg.innerHTML = `<i class="fas fa-exclamation-triangle"></i> ${message}`;
+            errorMsg.style.display = 'block';
+            errorMsg.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+        
+        function closeAuth() {
+            window.location.href = '../index.html';
+        }
+    </script>
+</body>
+</html>

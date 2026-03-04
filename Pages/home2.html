@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly</title>
+    <link rel="stylesheet" href="./home2.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="loader">
+        <span class="loader">STACKLY</span>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+             <a href="./home2.html" class="logo">
+                <img class="logo2" src="../Images/logo.webp" alt="Stackly Logo"/>
+            </a> 
+            
+            <div class="mobile-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <div class="dropdown">
+                    <a href="./home2.html" class="nav-link">Home <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="../index.html" class="dropdown-item">Home 1</a>
+                      
+                    </div>
+                </div>
+                <a href="./shop2.html" class="nav-link">Shop</a>
+                <a href="./product2.html" class="nav-link">Product</a>
+                <a href="./contact2.html" class="nav-link">Contact</a>
+                <a href="./dashboard.html" class="nav-link">Dashboard</a>
+                <a href="./signin.html" class="signin-btn">Sign In</a>
+            </div>
+        </div>
+    </nav>
+    
+
+<section class="home2-hero">
+    <div class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </div>
+    
+    <div class="hero-content">
+        <div class="hero-badge">New Collection 2026</div>
+        <h1 class="hero-title">
+            <span class="title-line">Crafted for</span>
+            Modern Living
+        </h1>
+        <p class="hero-subtitle">
+            Discover sustainable furniture designed for Salem homes. 
+            Handcrafted wood pieces that blend tradition with contemporary style.
+        </p>
+        
+        <div class="hero-stats">
+            <div class="stat-item">
+                <div class="stat-number2">+500</div>
+                <div class="stat-label">Happy Customers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number2">5★</div>
+                <div class="stat-label">Avg Rating</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number2">24h</div>
+                <div class="stat-label">Delivery</div>
+            </div>
+        </div>
+        
+       
+</section>
+
+
+<section class="home2-about" style="padding: 30px 0px;">
+    <div class="container">
+        <div class="about-grid">
+           
+            <div class="about-content" data-aos="fade-right">
+                <div class="section-badge">About Stackly</div>
+                <h2>Salem's Premier Furniture Craftsmanship</h2>
+                <p>
+                    For over 15 years, we've been perfecting the art of handcrafted 
+                    furniture using locally sourced teak and sheesham wood from Tamil Nadu.
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Sustainable Wood</h4>
+                        <p>100% eco-friendly materials</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-hammer"></i>
+                        </div>
+                        <h4>Handcrafted</h4>
+                        <p>Artisan quality guaranteed</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h4>Fast Delivery</h4>
+                        <p>Salem & nearby in 24hrs</p>
+                    </div>
+                </div>
+                
+             
+            </div>
+            
+          
+            <div class="about-image" data-aos="fade-left">
+                <div class="image-wrapper">
+                    <img src="../Images/hh1_75.webp" alt="Workshop">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h4>Our Workshop</h4>
+                            <p>4/127-A Meyyanur Road, Salem</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home2-products" style="padding: 30px 0px;" data-aos="fade-up">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up" data-aos-delay="100">
+            <div class="section-badge" data-aos="zoom-in" data-aos-delay="200">Shop Collection</div>
+            <h2 data-aos="fade-down" data-aos-delay="300">Featured This Week</h2>
+            <p data-aos="fade-up" data-aos-delay="400">Handpicked pieces from our Salem workshop - limited stock available</p>
+        </div>
+        
+        <div class="products-filter" data-aos="fade-up" data-aos-delay="500">
+            <button class="filter-btn active" data-category="all">All Products</button>
+            <button class="filter-btn" data-category="chairs">Chairs</button>
+            <button class="filter-btn" data-category="tables">Tables</button>
+            <button class="filter-btn" data-category="beds">Beds</button>
+        </div>
+        
+        <div class="products-grid" id="productsGrid" data-aos="fade-up" data-aos-delay="600">
+            <div class="product-card" data-category="chairs" data-aos="fade-up" data-aos-delay="700">
+                <div class="product-image-wrapper">
+                    <img src="../Images/i1.webp" alt="Teak Wood Dining Chair" class="product-image">
+                    <div class="product-badge">Best Seller</div>
+                </div>
+                <div class="product-content">
+                    <div class="product-category">CHAIRS</div>
+                    <h3 class="product-title">Teak Wood Dining Chair</h3>
+                    <div class="product-price">₹12,500</div>
+                    <div class="product-actions">
+                        <a href="./error.html" class="btn-primary">Buy now</a>
+                        <a href="./error.html" class="btn-wishlist"><i class="far fa-heart"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="tables" data-aos="fade-up" data-aos-delay="800">
+                <div class="product-image-wrapper">
+                    <img src="../Images/i2.webp" alt="Sheesham Coffee Table" class="product-image">
+                    <div class="product-badge">New</div>
+                </div>
+                <div class="product-content">
+                    <div class="product-category">TABLES</div>
+                    <h3 class="product-title">Sheesham Coffee Table</h3>
+                    <div class="product-price">₹28,500</div>
+                     <div class="product-actions">
+                        <a href="./error.html" class="btn-primary">Buy now</a>
+                        <a href="./error.html" class="btn-wishlist"><i class="far fa-heart"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="beds" data-aos="fade-up" data-aos-delay="900">
+                <div class="product-image-wrapper">
+                    <img src="../Images/i3.webp" alt="King Size Platform Bed" class="product-image">
+                    <div class="product-badge">-15%</div>
+                </div>
+                <div class="product-content">
+                    <div class="product-category">BEDS</div>
+                    <h3 class="product-title">King Size Platform Bed</h3>
+                    <div class="product-price">₹78,500</div>
+                      <div class="product-actions">
+                        <a href="./error.html" class="btn-primary">Buy now</a>
+                        <a href="./error.html" class="btn-wishlist"><i class="far fa-heart"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="tables" data-aos="fade-up" data-aos-delay="1000">
+                <div class="product-image-wrapper">
+                    <img src="../Images/i4.webp" alt="Walnut Study Desk" class="product-image">
+                    <div class="product-badge">Limited</div>
+                </div>
+                <div class="product-content">
+                    <div class="product-category">TABLES</div>
+                    <h3 class="product-title">Walnut Study Desk</h3>
+                    <div class="product-price">₹18,900</div>
+                      <div class="product-actions">
+                        <a href="./error.html" class="btn-primary">Buy now</a>
+                        <a href="./error.html" class="btn-wishlist"><i class="far fa-heart"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="chairs" data-aos="fade-up" data-aos-delay="1100">
+                <div class="product-image-wrapper">
+                    <img src="../Images/i5.webp" alt="Reclaimed Armchair" class="product-image">
+                    <div class="product-badge">Best Seller</div>
+                </div>
+                <div class="product-content">
+                    <div class="product-category">CHAIRS</div>
+                    <h3 class="product-title">Reclaimed Armchair</h3>
+                    <div class="product-price">₹24,500</div>
+                     <div class="product-actions">
+                        <a href="./error.html" class="btn-primary">Buy now</a>
+                        <a href="./error.html" class="btn-wishlist"><i class="far fa-heart"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="beds" data-aos="fade-up" data-aos-delay="1200">
+                <div class="product-image-wrapper">
+                    <img src="../Images/i6.webp" alt="Queen Bed Frame" class="product-image">
+                    <div class="product-badge">New</div>
+                </div>
+                <div class="product-content">
+                    <div class="product-category">BEDS</div>
+                    <h3 class="product-title">Queen Bed Frame</h3>
+                    <div class="product-price">₹45,200</div>
+                      <div class="product-actions">
+                        <a href="./error.html" class="btn-primary">Buy now</a>
+                        <a href="./error.html" class="btn-wishlist"><i class="far fa-heart"></i></a>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="home2-brands" style="padding: 30px 0px;" data-aos="fade-up">
+    <div class="container">
+        <div class="brands-header" data-aos="fade-down" data-aos-delay="200">
+            <h2 data-aos="zoom-in" data-aos-delay="300">As Featured In</h2>
+            <p data-aos="fade-up" data-aos-delay="400">Trusted by Salem's finest homes and businesses</p>
+        </div>
+        
+        <div class="brands-grid">
+            <div class="brand-item" data-aos="fade-up" data-aos-delay="500">
+                <div class="brand-logo" data-aos="zoom-in" data-aos-delay="500">
+                    <i class="fas fa-home"></i>
+                </div>
+                <div class="brand-info">
+                    <h4 data-aos="fade-right" data-aos-delay="550">Local Homes</h4>
+                    <span data-aos="fade-left" data-aos-delay="600">500+ Families</span>
+                </div>
+            </div>
+            
+            <div class="brand-item" data-aos="fade-up" data-aos-delay="700">
+                <div class="brand-logo" data-aos="zoom-in" data-aos-delay="700">
+                    <i class="fas fa-building"></i>
+                </div>
+                <div class="brand-info">
+                    <h4 data-aos="fade-right" data-aos-delay="750">Hotels</h4>
+                    <span data-aos="fade-left" data-aos-delay="800">25+ Properties</span>
+                </div>
+            </div>
+            
+            <div class="brand-item" data-aos="fade-up" data-aos-delay="900">
+                <div class="brand-logo" data-aos="zoom-in" data-aos-delay="900">
+                    <i class="fas fa-store"></i>
+                </div>
+                <div class="brand-info">
+                    <h4 data-aos="fade-right" data-aos-delay="950">Retail Spaces</h4>
+                    <span data-aos="fade-left" data-aos-delay="1000">40+ Stores</span>
+                </div>
+            </div>
+            
+            <div class="brand-item" data-aos="fade-up" data-aos-delay="1100">
+                <div class="brand-logo" data-aos="zoom-in" data-aos-delay="1100">
+                    <i class="fas fa-university"></i>
+                </div>
+                <div class="brand-info">
+                    <h4 data-aos="fade-right" data-aos-delay="1150">Institutions</h4>
+                    <span data-aos="fade-left" data-aos-delay="1200">15+ Colleges</span>
+                </div>
+            </div>
+            
+            <div class="brand-item" data-aos="fade-up" data-aos-delay="1300">
+                <div class="brand-logo" data-aos="zoom-in" data-aos-delay="1300">
+                    <i class="fas fa-hotel"></i>
+                </div>
+                <div class="brand-info">
+                    <h4 data-aos="fade-right" data-aos-delay="1350">Guest Houses</h4>
+                    <span data-aos="fade-left" data-aos-delay="1400">30+ Locations</span>
+                </div>
+            </div>
+            
+            <div class="brand-item" data-aos="fade-up" data-aos-delay="1500">
+                <div class="brand-logo" data-aos="zoom-in" data-aos-delay="1500">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <div class="brand-info">
+                    <h4 data-aos="fade-right" data-aos-delay="1550">Restaurants</h4>
+                    <span data-aos="fade-left" data-aos-delay="1600">20+ Eateries</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="quality-badges" data-aos="fade-up" data-aos-delay="1700">
+            <div class="badge" data-aos="flip-left" data-aos-delay="1700">
+                <i class="fas fa-award"></i>
+                <span>Certified Wood</span>
+            </div>
+            <div class="badge" data-aos="flip-left" data-aos-delay="1800">
+                <i class="fas fa-shipping-fast"></i>
+                <span>24h Delivery</span>
+            </div>
+            <div class="badge" data-aos="flip-left" data-aos-delay="1900">
+                <i class="fas fa-leaf"></i>
+                <span>Eco-Friendly</span>
+            </div>
+            <div class="badge" data-aos="flip-left" data-aos-delay="2000">
+                <i class="fas fa-tools"></i>
+                <span>5 Year Warranty</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="woodworks-gallery" style="padding: 30px 0px;" data-aos="fade-up">
+    <div class="container">
+        <div class="gallery-header" data-aos="fade-down" data-aos-delay="200">
+            <h2 data-aos="zoom-in" data-aos-delay="300">Gallery</h2>
+            <p data-aos="fade-up" data-aos-delay="400">Real installations in Salem homes</p>
+        </div>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item" style="--i:1;" data-aos="fade-up" data-aos-delay="500">
+                <img src="../Images/i7.webp" alt="Living Room">
+                <div class="gallery-overlay">
+                    <h4>Living Room</h4>
+                    <span>Salem Residence</span>
+                </div>
+            </div>
+            
+            <div class="gallery-item" style="--i:2;" data-aos="fade-up" data-aos-delay="600">
+                <img src="../Images/i8.webp" alt="Dining Area">
+                <div class="gallery-overlay">
+                    <h4>Dining Area</h4>
+                    <span>Hotel Lobby</span>
+                </div>
+            </div>
+            
+            <div class="gallery-item" style="--i:3;" data-aos="fade-up" data-aos-delay="700">
+                <img src="../Images/i9.webp" alt="Bedroom">
+                <div class="gallery-overlay">
+                    <h4>Master Bedroom</h4>
+                    <span>Villa Project</span>
+                </div>
+            </div>
+            
+            <div class="gallery-item" style="--i:4;" data-aos="fade-up" data-aos-delay="800">
+                <img src="../Images/i10.webp" alt="Office">
+                <div class="gallery-overlay">
+                    <h4>Home Office</h4>
+                    <span>Corporate Client</span>
+                </div>
+            </div>
+            
+            <div class="gallery-item" style="--i:5;" data-aos="fade-up" data-aos-delay="900">
+                <img src="../Images/i11.webp" alt="Restaurant">
+                <div class="gallery-overlay">
+                    <h4>Restaurant</h4>
+                    <span>Salem Eatery</span>
+                </div>
+            </div>
+            
+            <div class="gallery-item" style="--i:6;" data-aos="fade-up" data-aos-delay="1000">
+                <img src="../Images/i12.webp" alt="Study">
+                <div class="gallery-overlay">
+                    <h4>Study Room</h4>
+                    <span>Private Residence</span>
+                </div>
+            </div>
+        </div>
+        
+       
+    </div>
+</section>
+
+
+<section class="home2-stats" style="padding: 30px 0px;" data-aos="fade-up">
+    <div class="stats-container">
+        <div class="stat-circle active" data-aos="zoom-in" data-aos-delay="200">
+            <div class="stat-number" data-target="528">0</div>
+            <div class="stat-label">Happy Families</div>
+            <i class="fas fa-home stat-icon"></i>
+        </div>
+        
+        <div class="stat-circle" data-aos="zoom-in" data-aos-delay="400">
+            <div class="stat-number" data-target="2473">0</div>
+            <div class="stat-label">Pieces Delivered</div>
+            <i class="fas fa-truck stat-icon"></i>
+        </div>
+        
+        <div class="stat-circle" data-aos="zoom-in" data-aos-delay="600">
+            <div class="stat-number" data-target="4.9">0</div>
+            <div class="stat-label">Avg Rating</div>
+            <i class="fas fa-star stat-icon"></i>
+        </div>
+        
+        <div class="stat-circle" data-aos="zoom-in" data-aos-delay="800">
+            <div class="stat-number" data-target="12">0</div>
+            <div class="stat-label">Years Experience</div>
+            <i class="fas fa-hammer stat-icon"></i>
+        </div>
+        
+        <div class="progress-bars">
+            <div class="progress-item" data-aos="fade-right" data-aos-delay="1000">
+                <div class="progress-label">
+                    <span>Teak Wood Stock</span>
+                    <span class="progress-value">98%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" data-width="98%"></div>
+                </div>
+            </div>
+            <div class="progress-item" data-aos="fade-up" data-aos-delay="1100">
+                <div class="progress-label">
+                    <span>On-Time Delivery</span>
+                    <span class="progress-value">96%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" data-width="96%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-top">
+            <div class="footer-brand" data-aos="fade-up">
+                <div class="brand-logo">
+                   
+                    <span>Stackly</span>
+                </div>
+                <p>Premium furniture crafted for modern living. Family-owned since 1952.</p>
+                <div class="social-links">
+                    <a href="./error.html"><i class="fab fa-facebook"></i></a>
+                    <a href="./error.html"><i class="fab fa-instagram"></i></a>
+                    <a href="./error.html"><i class="fab fa-pinterest"></i></a>
+                    <a href="./error.html"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column map-section" data-aos="fade-up" data-aos-delay="100">
+                <h3>Visit Us</h3>
+              
+                <div class="map-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Furniture St, Salem, TN 636001</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 999 888 7777</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>hello@stackly.in</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-column" data-aos="fade-up" data-aos-delay="200">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="./home2.html">Home</a></li>
+                    <li><a href="./shop2.html">Shop</a></li>
+                    <li><a href="./product2.html">Product</a></li>
+                    <li><a href="./contact2.html">Contact</a></li>
+                    <li><a href="./dashboard.html">Dashboard</a></li>
+                  
+                   
+                </ul>
+            </div>
+        </div>
+          <div class="map-container">
+                    <iframe
+                class="map1"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.1616097152896!2d78.1739798!3d11.682956599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babefef7fd970bb%3A0xe11aef1a71994f9!2sStackly!5e0!3m2!1sen!2sin!4v1757488188623!5m2!1sen!2sin"
+                width="100%"
+                height="150"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+                </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                © 2026 Stackly Furniture. All rights reserved. Made in Salem, India.
+            </div>
+          
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const circles = document.querySelectorAll('.stat-circle');
+    const numbers = document.querySelectorAll('.stat-number');
+    const fills = document.querySelectorAll('.progress-fill');
+    
+    circles.forEach((circle, index) => {
+        circle.addEventListener('mouseenter', function() {
+            this.classList.add('active');
+        });
+        
+        circle.addEventListener('mouseleave', function() {
+            this.classList.remove('active');
+        });
+    });
+    
+    function animateNumbers() {
+        numbers.forEach(number => {
+            const target = parseFloat(number.getAttribute('data-target'));
+            const duration = 3000;
+            const increment = target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    number.textContent = target >= 10 ? Math.floor(target) : target.toFixed(1);
+                    clearInterval(timer);
+                } else {
+                    number.textContent = current >= 10 ? Math.floor(current) : current.toFixed(1);
+                }
+            }, 16);
+        });
+    }
+    
+    function animateProgress() {
+        fills.forEach(fill => {
+            const width = fill.getAttribute('data-width');
+            setTimeout(() => {
+                fill.style.width = width;
+            }, 500);
+        });
+    }
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateNumbers();
+                animateProgress();
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+    
+    observer.observe(document.querySelector('.stats-container'));
+});
+
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    function renderProducts(category = 'all') {
+        const cards = document.querySelectorAll('.product-card');
+        cards.forEach(card => {
+            if (category === 'all' || card.dataset.category === category) {
+                card.style.display = 'block';
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100);
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            renderProducts(this.dataset.category);
+        });
+    });
+});
+
+</script>
+
+     <script>
+    function toggleMobileMenu() {
+    const navMenu = document.getElementById('navMenu');
+    const toggle = document.querySelector('.mobile-toggle');
+    navMenu.classList.toggle('active');
+    toggle.classList.toggle('active');
+    
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+        dropdown.classList.remove('active');
+    });
+}
+
+document.querySelectorAll('.dropdown > .nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const dropdown = link.parentElement;
+            dropdown.classList.toggle('active');
+        }
+    });
+});
+
+  </script>
+
+
+  <script>
+        AOS.init({
+            duration: 800,
+            once: false,
+            mirror: true,
+            offset: 100,
+        });
+    </script>
+
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.getElementById("loader");
+            setTimeout(() => {
+                loader.style.opacity = "0";
+                loader.style.pointerEvents = "none";
+                setTimeout(() => {
+                    loader.style.display = "none";
+                }, 500);
+            }, 1100);
+        });
+    </script>
+
+
+</body>
+</html>

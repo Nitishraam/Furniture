@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly</title>
+    <link rel="stylesheet" href="./product2.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="loader">
+        <span class="loader">STACKLY</span>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+             <a href="./home2.html" class="logo">
+                <img class="logo2" src="../Images/logo.webp" alt="Stackly Logo"/>
+            </a> 
+            
+            <div class="mobile-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <div class="dropdown">
+                    <a href="./home2.html" class="nav-link">Home <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="../index.html" class="dropdown-item">Home 1</a>
+                      
+                    </div>
+                </div>
+                <a href="./shop2.html" class="nav-link">Shop</a>
+                <a href="./product2.html" class="nav-link">Product</a>
+                <a href="./contact2.html" class="nav-link">Contact</a>
+                <a href="./dashboard.html" class="nav-link">Dashboard</a>
+                <a href="./signin.html" class="signin-btn">Sign In</a>
+            </div>
+        </div>
+    </nav>
+    
+
+<section class="product2-hero" style="padding: 30px 0px;" data-aos="fade-up">
+    <div class="container">
+        <div class="product-hero-content">
+            <div class="product-gallery" data-aos="fade-right" data-aos-delay="200">
+                <div class="main-product-image">
+                    <img src="../Images/pp3.webp" alt="Premium Teak Dining Table" class="main-img">
+                    
+                </div>
+                <div class="thumbnail-gallery">
+                    <img src="../Images/pp2.webp" alt="Side view" class="thumb active">
+                    <img src="../Images/pp.webp" alt="Top view" class="thumb">
+                    <img src="../Images/pp4.webp" alt="Detail" class="thumb">
+                    <img src="../Images/pp5.webp" alt="Finish" class="thumb">
+                </div>
+            </div>
+            
+            <div class="product-details" data-aos="fade-left" data-aos-delay="300">
+                <div class="product-badge bestseller">🔥 BESTSELLER</div>
+                <h1 data-aos="fade-up" data-aos-delay="400">Royal Teak 6-Seater Dining</h1>
+                
+                <div class="price-section" data-aos="fade-up" data-aos-delay="500">
+                    <div class="current-price">₹89,999</div>
+                    <div class="original-price">₹1,15,000</div>
+                    <div class="discount">22% OFF</div>
+                </div>
+                
+                <div class="product-meta" data-aos="fade-up" data-aos-delay="600">
+                    <div class="meta-item">
+                        <span class="meta-label">Material:</span>
+                        <span class="meta-value">Burma Teak Wood</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Size:</span>
+                        <span class="meta-value">72" x 42" x 30"</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Warranty:</span>
+                        <span class="meta-value">15 Years</span>
+                    </div>
+                </div>
+                
+                <div class="quantity-section" data-aos="fade-up" data-aos-delay="700">
+                    <label>Quantity:</label>
+                    <div class="quantity-control">
+                        <button class="qty-minus">-</button>
+                        <input type="number" value="1" min="1">
+                        <button class="qty-plus">+</button>
+                    </div>
+                </div>
+                
+                <div class="add-to-cart-section" data-aos="fade-up" data-aos-delay="800">
+                    <a href="./error.html" class="add-to-cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart - ₹89,999
+                    </a>
+                    <a href="./error.html" class="buy-now-btn">
+                        <i class="fas fa-bolt"></i>
+                        Buy Now
+                    </a>
+                </div>
+                
+                <div class="stock-status" data-aos="fade-up" data-aos-delay="900">
+                    <i class="fas fa-check-circle"></i>
+                    <span>12 Left in Stock - Ships in 7-10 days</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="product2-details" style="padding: 30px 0px;" data-aos="fade-up">
+    <div class="container">
+        <div class="details-tabs">
+            <button class="tab-btn active" data-tab="description">Description</button>
+            <button class="tab-btn" data-tab="features">Features</button>
+            <button class="tab-btn" data-tab="shipping">Shipping</button>
+            <button class="tab-btn" data-tab="reviews">Reviews</button>
+        </div>
+        
+        <div class="tab-content">
+            <!-- Description Tab -->
+            <div class="tab-panel active" id="description">
+                <div class="details-grid">
+                    <div class="detail-block">
+                        <h3>Handcrafted Excellence</h3>
+                        <p>35 master Salem craftsmen spent 45 days carving this masterpiece. Every joint uses traditional mortise & tenon - zero nails, zero screws, lifetime durability.</p>
+                    </div>
+                    <div class="detail-block">
+                        <h3>Burma Teak Premium</h3>
+                        <p>Imported grade-A teak with 12% moisture content - perfect for Salem's 35°C summers. Natural oil finish protects against termites & humidity.</p>
+                    </div>
+                    <div class="detail-block">
+                        <h3>6-Seater Comfort</h3>
+                        <p>72x42 inch table seats 6 adults comfortably. 2.5" thick solid teak top with carved edge details. Extends to 8-seater with included leaves.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Features Tab -->
+            <div class="tab-panel" id="features">
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">🌳</div>
+                        <div class="feature-text">
+                            <h4>Solid Burma Teak</h4>
+                            <span>100% solid wood - no plywood</span>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔧</div>
+                        <div class="feature-text">
+                            <h4>Traditional Joinery</h4>
+                            <span>Mortise & Tenon - no metal fasteners</span>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📏</div>
+                        <div class="feature-text">
+                            <h4>Precise Dimensions</h4>
+                            <span>72"W x 42"D x 30"H - Extends +24"</span>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎨</div>
+                        <div class="feature-text">
+                            <h4>Natural Oil Finish</h4>
+                            <span>Food-safe, termite resistant polish</span>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚖️</div>
+                        <div class="feature-text">
+                            <h4>450kg Capacity</h4>
+                            <span>Load tested - family safe</span>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔒</div>
+                        <div class="feature-text">
+                            <h4>15 Year Warranty</h4>
+                            <span>Lifetime structural guarantee</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Shipping Tab -->
+            <div class="tab-panel" id="shipping">
+                <div class="shipping-timeline">
+                    <div class="timeline-step active">
+                        <div class="step-number">1</div>
+                        <h4>Order Confirmed</h4>
+                        <p>Within 2 hours - Free design call</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-number">2</div>
+                        <h4>Crafted (7-10 days)</h4>
+                        <p>Handmade in Salem workshop</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-number">3</div>
+                        <h4>Quality Check</h4>
+                        <p>12-point inspection done</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-number">4</div>
+                        <h4>Shipped</h4>
+                        <p>Free delivery Tamil Nadu</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-number">5</div>
+                        <h4>Installed</h4>
+                        <p>Free professional setup</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Reviews Tab -->
+            <div class="tab-panel" id="reviews">
+                <div class="review-stats">
+                    <div class="overall-rating">
+                        <span class="rating-score">4.9</span>
+                        <span class="rating-stars">★★★★★</span>
+                        <span class="review-count">(127 reviews)</span>
+                    </div>
+                </div>
+                <div class="reviews-list">
+                    <div class="review-item">
+                        <div class="review-header">
+                            <span class="reviewer">Ravi K. ★★★★★</span>
+                            <span class="review-date">3 days ago</span>
+                        </div>
+                        <p>"Absolutely stunning! Better than expected. Delivery team installed perfectly."</p>
+                    </div>
+                    <div class="review-item">
+                        <div class="review-header">
+                            <span class="reviewer">Priya M. ★★★★★</span>
+                            <span class="review-date">1 week ago</span>
+                        </div>
+                        <p>"Perfect dining table for our family. Teak quality is outstanding. Highly recommend!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="product2-related" style="padding: 30px 0px;" data-aos="fade-up">
+    <div class="container">
+        <div class="related-header" data-aos="fade-down" data-aos-delay="200">
+            <h2 data-aos="zoom-in" data-aos-delay="300">Complete Your Dining Set</h2>
+            <p data-aos="fade-up" data-aos-delay="400">Matching pieces & accessories - Save 15% on bundles</p>
+        </div>
+        
+        <div class="related-products">
+            <!-- Matching Sideboard -->
+            <div class="related-item" data-aos="fade-up" data-aos-delay="500">
+                <div class="related-image">
+                    <img src="../Images/pp6.webp" alt="Teak Sideboard">
+                    <div class="bundle-save">-15% Bundle</div>
+                </div>
+                <div class="related-info">
+                    <h3>Teak Buffet Sideboard</h3>
+                    <div class="related-price">
+                        <span class="price-now">₹45,999</span>
+                        <span class="price-bundle">₹39,000</span>
+                    </div>
+                    <div class="related-stock">✅ 8 Left</div>
+                    <a href="./error.html" class="add-related">Add to Bundle</a>
+                </div>
+            </div>
+            
+            <!-- Matching Chairs -->
+            <div class="related-item popular" data-aos="fade-up" data-aos-delay="600">
+                <div class="related-image">
+                    <img src="../Images/pp7.webp" alt="Dining Chairs">
+                    <div class="hot-badge">🔥 Set of 6</div>
+                </div>
+                <div class="related-info">
+                    <h3>Teak Dining Chairs (6)</h3>
+                    <div class="related-price">
+                        <span class="price-now">₹54,000</span>
+                        <span class="price-bundle">₹46,000</span>
+                    </div>
+                    <div class="related-stock">✅ 15 Sets</div>
+                    <a href="./error.html" class="add-related">Complete Set</a>
+                </div>
+            </div>
+            
+            <!-- Table Runner -->
+            <div class="related-item" data-aos="fade-up" data-aos-delay="700">
+                <div class="related-image">
+                    <img src="../Images/pp8.webp" alt="Table Runner">
+                    <div class="gift-badge">Free Gift</div>
+                </div>
+                <div class="related-info">
+                    <h3>Handwoven Runner</h3>
+                    <div class="related-price">
+                        <span class="price-now">₹2,999</span>
+                        <span class="price-bundle">Free</span>
+                    </div>
+                    <div class="related-stock">✅ Unlimited</div>
+                    <a href="./error.html" class="add-related">Add Free</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bundle-summary" data-aos="fade-up" data-aos-delay="800">
+            <div class="bundle-total">
+                <h3>Complete Dining Room Package</h3>
+                <div class="total-breakdown">
+                    <span>Table: ₹89,999</span>
+                    <span>Sideboard: ₹39,000</span>
+                    <span>Chairs (6): ₹46,000</span>
+                    <span class="total-save">Total Save: ₹27,000</span>
+                </div>
+                <div class="grand-total">₹1,74,999</div>
+                <a href="./error.html" class="bundle-buy">Buy Complete Set - Save ₹27K</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-top">
+            <div class="footer-brand" data-aos="fade-up">
+                <div class="brand-logo">
+                   
+                    <span>Stackly</span>
+                </div>
+                <p>Premium furniture crafted for modern living. Family-owned since 1952.</p>
+                <div class="social-links">
+                    <a href="./error.html"><i class="fab fa-facebook"></i></a>
+                    <a href="./error.html"><i class="fab fa-instagram"></i></a>
+                    <a href="./error.html"><i class="fab fa-pinterest"></i></a>
+                    <a href="./error.html"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column map-section" data-aos="fade-up" data-aos-delay="100">
+                <h3>Visit Us</h3>
+              
+                <div class="map-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Furniture St, Salem, TN 636001</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 999 888 7777</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>hello@stackly.in</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-column" data-aos="fade-up" data-aos-delay="200">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="./home2.html">Home</a></li>
+                    <li><a href="./shop2.html">Shop</a></li>
+                    <li><a href="./product2.html">Product</a></li>
+                    <li><a href="./contact2.html">Contact</a></li>
+                    <li><a href="./dashboard.html">Dashboard</a></li>
+                  
+                   
+                </ul>
+            </div>
+        </div>
+          <div class="map-container">
+                    <iframe
+                class="map1"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.1616097152896!2d78.1739798!3d11.682956599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babefef7fd970bb%3A0xe11aef1a71994f9!2sStackly!5e0!3m2!1sen!2sin!4v1757488188623!5m2!1sen!2sin"
+                width="100%"
+                height="150"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+                </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                © 2026 Stackly Furniture. All rights reserved. Made in Salem, India.
+            </div>
+          
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+<script>
+    // Product2 Details Tabs + Interactions
+document.addEventListener('DOMContentLoaded', function() {
+    // Tab functionality
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+    
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const targetTab = this.getAttribute('data-tab');
+            
+            // Update active tab button
+            tabBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Update active tab panel
+            tabPanels.forEach(p => p.classList.remove('active'));
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+    
+    // Timeline step highlighting (auto-advance demo)
+    const timelineSteps = document.querySelectorAll('.timeline-step');
+    let currentStep = 0;
+    
+    setInterval(() => {
+        timelineSteps[currentStep].classList.remove('active');
+        currentStep = (currentStep + 1) % timelineSteps.length;
+        timelineSteps[currentStep].classList.add('active');
+    }, 3000);
+});
+
+</script>
+
+<script>
+    // Product2 Page - Interactive JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Thumbnail gallery functionality
+    const thumbs = document.querySelectorAll('.thumb');
+    const mainImg = document.querySelector('.main-img');
+    
+    thumbs.forEach(thumb => {
+        thumb.addEventListener('click', function() {
+            // Remove active class from all thumbs
+            thumbs.forEach(t => t.classList.remove('active'));
+            // Add active to clicked thumb
+            this.classList.add('active');
+            
+            // Change main image
+            const imgSrc = this.src.replace('100', '700');
+            mainImg.src = imgSrc;
+        });
+    });
+    
+    // Quantity controls
+    const qtyMinus = document.querySelector('.qty-minus');
+    const qtyPlus = document.querySelector('.qty-plus');
+    const qtyInput = document.querySelector('.quantity-control input');
+    
+    qtyMinus.addEventListener('click', function() {
+        let currentVal = parseInt(qtyInput.value) || 1;
+        if (currentVal > 1) {
+            qtyInput.value = currentVal - 1;
+            updateCartPrice();
+        }
+    });
+    
+    qtyPlus.addEventListener('click', function() {
+        let currentVal = parseInt(qtyInput.value) || 1;
+        qtyInput.value = currentVal + 1;
+        updateCartPrice();
+    });
+    
+    // Update cart price based on quantity
+    function updateCartPrice() {
+        const qty = parseInt(qtyInput.value) || 1;
+        const basePrice = 89999;
+        const totalPrice = basePrice * qty;
+        const cartBtn = document.querySelector('.add-to-cart-btn');
+        cartBtn.innerHTML = `<i class="fas fa-shopping-cart"></i>Add to Cart - ₹${totalPrice.toLocaleString()}`;
+    }
+    
+    // Add to cart functionality
+    document.querySelector('.add-to-cart-btn').addEventListener('click', function() {
+        const qty = parseInt(qtyInput.value) || 1;
+        this.innerHTML = `<i class="fas fa-check"></i>Added to Cart! (${qty})`;
+        this.style.background = '#51cf66';
+        setTimeout(() => {
+            this.innerHTML = `<i class="fas fa-shopping-cart"></i>Add to Cart - ₹89,999`;
+            this.style.background = '';
+        }, 2000);
+    });
+    
+    // Buy now functionality
+    document.querySelector('.buy-now-btn').addEventListener('click', function() {
+        this.innerHTML = `<i class="fas fa-spinner fa-spin"></i>Redirecting...`;
+        setTimeout(() => {
+            // Go to checkout or show modal
+            alert('Redirecting to checkout...');
+        }, 1000);
+    });
+    
+    // Image zoom hover effect
+    const imageZoom = document.querySelector('.image-zoom');
+    const mainProductImage = document.querySelector('.main-product-image');
+    
+    mainProductImage.addEventListener('click', function(e) {
+        if (e.target === imageZoom || imageZoom.contains(e.target)) {
+            // Open lightbox or zoom modal
+            alert('Zoom functionality - Fullscreen lightbox');
+        }
+    });
+});
+
+</script>
+
+      <script>
+    function toggleMobileMenu() {
+    const navMenu = document.getElementById('navMenu');
+    const toggle = document.querySelector('.mobile-toggle');
+    navMenu.classList.toggle('active');
+    toggle.classList.toggle('active');
+    
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+        dropdown.classList.remove('active');
+    });
+}
+
+document.querySelectorAll('.dropdown > .nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const dropdown = link.parentElement;
+            dropdown.classList.toggle('active');
+        }
+    });
+});
+
+  </script>
+
+
+  <script>
+        AOS.init({
+            duration: 800,
+            once: false,
+            mirror: true,
+            offset: 100,
+        });
+    </script>
+
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.getElementById("loader");
+            setTimeout(() => {
+                loader.style.opacity = "0";
+                loader.style.pointerEvents = "none";
+                setTimeout(() => {
+                    loader.style.display = "none";
+                }, 500);
+            }, 1100);
+        });
+    </script>
+
+</body>
+</html>
