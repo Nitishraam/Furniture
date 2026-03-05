@@ -310,6 +310,7 @@ body {
     display: flex;
     align-items: center;
     margin-top: 70px;
+    overflow: hidden;
 }
 
 .product-hero-content {
@@ -608,6 +609,17 @@ body {
     .add-to-cart-section {
         flex-direction: column;
     }
+    .main-product-image{
+        width: 100vw;
+    }
+    .thumbnail-gallery{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .product-hero-content{
+        gap: 1rem;
+    }
+    
 }
 
 
@@ -1093,6 +1105,13 @@ body {
     .total-breakdown {
         align-items: center;
         text-align: center;
+    }
+    .bundle-buy{
+        font-size: 9px;
+        padding: 20px;
+    }
+    .bundle-summary{
+        padding: 3rem;
     }
 }
 
