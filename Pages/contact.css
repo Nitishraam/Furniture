@@ -551,6 +551,9 @@ body {
         flex-direction: column;
         align-items: center;
     }
+    .contact-grid-layout{
+        gap: 1rem;
+    }
 }
 
 
