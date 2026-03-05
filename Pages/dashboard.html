@@ -39,7 +39,7 @@
                 <a href="./shop.html" class="nav-link">Shop</a>
                 <a href="./product.html" class="nav-link">Product</a>
                 <a href="./contact.html" class="nav-link">Contact</a>
-                <a href="./dashboard.html" class="nav-link">Dashboard</a>
+                <a style="color: #c9641d;"  href="./dashboard.html" class="nav-link">Dashboard</a>
                 <a href="./signin.html" class="signin-btn">Sign In</a>
             </div>
         </div>
@@ -138,36 +138,31 @@
                 <canvas id="spendingChart" ></canvas>
             </div>
         </div>
-
-        <div class="products-table-card">
-            <div class="table-header">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <div>
-                        <h3 style="font-size: 1.4rem; font-weight: 800;">Products</h3>
-                        <div style="color: var(--text-muted);">Sort by: Product | Popular</div>
-                    </div>
-                    <select style="padding: 0.5rem 1rem; border: 1px solid rgba(192,192,192,0.3); border-radius: 8px; background: white;">
-                        <option>All Products</option>
-                        <option>Furniture</option>
-                        <option>Lamps</option>
-                    </select>
-                </div>
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Product Name</th>
-                        <th>Qty</th>
-                        <th>Total</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody id="productsTable">
-                 
-                </tbody>
-            </table>
+<div class="products-table-card">
+    <div class="table-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+            <h3 style="font-size: 1.4rem; font-weight: 800; margin: 0;">Products Inventory</h3>
+            <div style="color: #8b7355; font-size: 0.9rem;">Real-time Salem showroom stock</div>
         </div>
+    </div>
+    
+    <!-- SCROLL WRAPPER -->
+    <div class="products-table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Product Name</th>
+                    <th>Qty</th>
+                    <th>Total Value</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="productsTable"></tbody>
+        </table>
+    </div>
+</div>
+
     </main>
 
 
@@ -347,73 +342,83 @@
         });
 
         // Products Table Data
-        const products = [
-            { id: 'SF-001', name: 'Minimal Chair', qty: 209, total: 44500, status: 'available', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=50&h=50&fit=crop' },
-            { id: 'SF-002', name: 'Standing Lamp', qty: 150, total: 28500, status: 'sold', img: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=50&h=50&fit=crop' },
-            { id: 'SF-003', name: 'Dressing Table', qty: 105, total: 32550, status: 'sold', img: 'https://images.unsplash.com/photo-1602720359113-d9c3a554ab10?w=50&h=50&fit=crop' },
-            { id: 'SF-004', name: 'Wooden Bookshelf', qty: 87, total: 21800, status: 'available', img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=50&h=50&fit=crop' },
-            { id: 'SF-005', name: 'Sofa Set', qty: 42, total: 189000, status: 'available', img: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=50&h=50&fit=crop' }
-        ];
+     document.addEventListener('DOMContentLoaded', function() {
+    // Products Table Data
+    const products = [
+        { id: 'SF-001', name: 'Minimal Chair', qty: 209, total: 44500, status: 'available', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=50&h=50&fit=crop' },
+        { id: 'SF-002', name: 'Standing Lamp', qty: 150, total: 28500, status: 'sold', img: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=50&h=50&fit=crop' },
+        { id: 'SF-003', name: 'Dressing Table', qty: 105, total: 32550, status: 'sold', img: 'https://images.unsplash.com/photo-1602720359113-d9c3a554ab10?w=50&h=50&fit=crop' },
+        { id: 'SF-004', name: 'Wooden Bookshelf', qty: 87, total: 21800, status: 'available', img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=50&h=50&fit=crop' },
+        { id: 'SF-005', name: 'Sofa Set', qty: 42, total: 189000, status: 'available', img: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=50&h=50&fit=crop' }
+    ];
 
-        function renderProducts() {
-            const tbody = document.getElementById('productsTable');
-            tbody.innerHTML = products.map(product => `
-                <tr>
-                    <td>${product.id}</td>
-                    <td>
-                        <div style="display: flex; align-items: center; gap: 1rem;">
-                            <img src="${product.img}" alt="${product.name}" class="product-image">
-                            <div>
-                                <div style="font-weight: 600;">${product.name}</div>
-                                <div style="color: var(--text-muted); font-size: 0.9rem;">Salem Showroom</div>
-                            </div>
-                        </div>
-                    </td>
-                    <td>${product.qty}</td>
-                    <td><span class="price">₹${(product.total).toLocaleString()}</span></td>
-                    <td><span class="status ${product.status}">${product.status.toUpperCase()}</span></td>
-                </tr>
-            `).join('');
+    function renderProducts(filteredProducts = products) {
+        const tbody = document.getElementById('productsTable');
+        if (!tbody) {
+            console.error('productsTable tbody not found!');
+            return;
         }
+        
+        tbody.innerHTML = filteredProducts.map(product => `
+            <tr>
+                <td>${product.id}</td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <img src="${product.img}" alt="${product.name}" class="product-image">
+                        <div>
+                            <div style="font-weight: 600; color: #2c1810;">${product.name}</div>
+                            <div style="color: #8b7355; font-size: 0.9rem;">Salem Showroom</div>
+                        </div>
+                    </div>
+                </td>
+                <td>${product.qty}</td>
+                <td><span class="price">₹${(product.total).toLocaleString()}</span></td>
+                <td><span class="status ${product.status}">${product.status.toUpperCase()}</span></td>
+            </tr>
+        `).join('');
+    }
 
-        // Search functionality
-        document.querySelector('.search-box').addEventListener('input', function(e) {
+    // Initialize table on load
+    renderProducts();
+
+    // Search functionality
+    const searchBox = document.querySelector('.search-box');
+    if (searchBox) {
+        searchBox.addEventListener('input', function(e) {
             const searchTerm = e.target.value.toLowerCase();
             const filtered = products.filter(p => 
                 p.name.toLowerCase().includes(searchTerm) || 
                 p.id.toLowerCase().includes(searchTerm)
             );
-            renderProducts(); // Re-render with filter logic if needed
+            renderProducts(filtered);
         });
+    }
 
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            animateCounters();
-            renderProducts();
+    // Animate counters (if stat-value elements exist)
+    const counters = document.querySelectorAll('.stat-value');
+    counters.forEach(counter => {
+        const target = parseFloat(counter.textContent.replace(/[^\d.]/g, ''));
+        if (!isNaN(target)) {
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
             
-            // Intersection Observer for animations
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            });
-            
-            document.querySelectorAll('.stat-card, .chart-card').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'all 0.6s ease';
-                observer.observe(el);
-            });
-        });
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                if (counter.textContent.includes('₹')) {
+                    counter.textContent = '₹' + Math.floor(current).toLocaleString();
+                } else {
+                    counter.textContent = Math.floor(current);
+                }
+            }, 16);
+        }
+    });
+});
 
-        // Auto-refresh data every 30 seconds
-        setInterval(() => {
-            console.log('Dashboard refreshed');
-            // Add real data refresh logic here
-        }, 30000);
     </script>
 
 
